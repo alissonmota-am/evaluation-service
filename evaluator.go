@@ -1,7 +1,8 @@
 package main
 
 import (
-	"context"
+	// "context"
+	"os"
 	"crypto/sha1"
 	"encoding/binary"
 	"encoding/json"
@@ -49,7 +50,8 @@ func (a *App) getCombinedFlagInfo(flagName string) (*CombinedFlagInfo, error) {
 	
 	log.Printf("Cache MISS para flag '%s'", flagName)
 	// 2. Cache MISS - Buscar dos serviços
-	info, err := a.fetchFromServices(flagName)
+	var info *CombinedFlagInfo
+	info, err = a.fetchFromServices(flagName)
 	if err != nil {
 		return nil, err
 	}
