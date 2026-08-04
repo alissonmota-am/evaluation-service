@@ -15,7 +15,7 @@ data "terraform_remote_state" "platform" {
 # ElastiCache Redis
 ################################################################################
 module "elasticache" {
-  source = "../../toggle-master-infra/modules/elasticache"
+  source = "git::https://github.com/alissonmota-am/toggle-master-infra.git//modules/elasticache?ref=develop"
 
   project_name               = var.project_name
   vpc_id                     = data.terraform_remote_state.platform.outputs.vpc_id
