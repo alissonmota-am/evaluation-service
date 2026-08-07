@@ -23,3 +23,15 @@ module "elasticache" {
   eks_node_security_group_id = data.terraform_remote_state.platform.outputs.eks_node_security_group_id
   node_type                  = var.redis_node_type
 }
+
+################################################################################
+# Secrets Manager — Redis URL
+################################################################################
+resource "aws_secretsmanager_secret" "redis_url" {
+  name = "${var.project_name}/redis-url"
+}
+
+resource "aws_secretsmanager_secret_version" "redis_url" {
+  secret_id     = aws_secretsmanager_secret.redis_url.id
+  secret_string = "redis://${module.elasticache.endpoint}:${module.elasticache.port}"
+}
