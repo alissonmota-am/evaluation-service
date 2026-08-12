@@ -28,7 +28,8 @@ module "elasticache" {
 # Secrets Manager — Redis URL
 ################################################################################
 resource "aws_secretsmanager_secret" "redis_url" {
-  name = "${var.project_name}/redis-url"
+  name                    = "${var.project_name}/redis-url"
+  recovery_window_in_days = 0
 }
 
 resource "aws_secretsmanager_secret_version" "redis_url" {
