@@ -7,5 +7,9 @@ data:
   PORT: "8004"
   FLAG_SERVICE_URL: "http://flag-service.flag-service.svc.cluster.local:8002"
   TARGETING_SERVICE_URL: "http://targeting-service.targeting-service.svc.cluster.local:8003"
-  AWS_SQS_URL: "https://sqs.us-east-1.amazonaws.com/634115191566/toggle-master-queue"
+  AWS_SQS_URL: "https://sqs.us-east-1.amazonaws.com/533267294133/analytics-service-dev-queue"
   AWS_REGION: "us-east-1"
+  # OpenTelemetry
+  OTEL_SERVICE_NAME: "evaluation-service"
+  OTEL_EXPORTER_OTLP_ENDPOINT: "otel-collector.observability.svc.cluster.local:4317"
+  DEPLOYMENT_ENVIRONMENT: "dev"
