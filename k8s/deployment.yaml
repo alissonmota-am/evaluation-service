@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: evaluation-service
-          image: 533267294133.dkr.ecr.us-east-1.amazonaws.com/toggle-master-dev/evaluation-service:d5ff9da4e17d05b71ae9289c654796212baaae3a
+          image: 533267294133.dkr.ecr.us-east-1.amazonaws.com/toggle-master-dev/evaluation-service:58be86a462986fbf7f183e032486fc854ef977af
           ports:
             - containerPort: 8004
           resources:
