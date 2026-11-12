@@ -6,7 +6,6 @@ metadata:
   labels:
     app: evaluation-service
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: evaluation-service
